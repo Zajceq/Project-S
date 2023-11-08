@@ -1,12 +1,18 @@
 using UnityEngine;
+using UnityAtoms.MyAtoms;
 
 public class Projectile : MonoBehaviour
 {
-    public ProjectileData projectileData;
+    [SerializeField] protected ProjectileDataVariable projectileData;
+
+    protected bool isActive = false;
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * projectileData.speed.Value * Time.deltaTime);
+        if (isActive)
+        {
+            transform.Translate(Vector3.up * projectileData.speed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -15,16 +21,19 @@ public class Projectile : MonoBehaviour
         {
             if (other.gameObject.TryGetComponent<Damageable>(out Damageable damageable))
             {
-                damageable.ReceiveDamage(projectileData.damage.Value);
-                if (PoolingManager.Instance.GetPool(projectileData.prefab) != null)
-                {
-                    PoolingManager.Instance.GetPool(projectileData.prefab).ReturnToPool(projectileData.prefab);
-                }
-                else
-                {
-                    Destroy(this.gameObject);
-                }
+                damageable.ReceiveDamage(projectileData.damage);
             }
+
+            if (PoolingManager.Instance.GetPool(projectileData.projectilePrefab.gameObject) != null)
+            {
+                PoolingManager.Instance.GetPool(projectileData.projectilePrefab.gameObject).ReturnToPool(projectileData.projectilePrefab.gameObject);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+
+            isActive = false;
         }
     }
 }
