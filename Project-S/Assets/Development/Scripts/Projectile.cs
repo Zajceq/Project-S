@@ -3,37 +3,33 @@ using UnityAtoms.MyAtoms;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] protected ProjectileDataVariable projectileData;
-
-    protected bool isActive = false;
+    [SerializeField] public ProjectileDataVariable projectileData;
 
     private void Update()
     {
-        if (isActive)
-        {
-            transform.Translate(Vector3.up * projectileData.speed * Time.deltaTime);
-        }
+        transform.Translate(Vector3.up * projectileData.Value.speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == projectileData.targetLayer)
+        if ((projectileData.Value.targetLayer.value & (1 << other.gameObject.layer)) != 0)
         {
             if (other.gameObject.TryGetComponent<Damageable>(out Damageable damageable))
             {
-                damageable.ReceiveDamage(projectileData.damage);
+                damageable.ReceiveDamage(projectileData.Value.damage);
+                Debug.Log("Damaged");
             }
 
-            if (PoolingManager.Instance.GetPool(projectileData.projectilePrefab.gameObject) != null)
+            if (PoolingManager.Instance.GetPool(projectileData.Value.projectilePrefab.gameObject) != null)
             {
-                PoolingManager.Instance.GetPool(projectileData.projectilePrefab.gameObject).ReturnToPool(projectileData.projectilePrefab.gameObject);
+                PoolingManager.Instance.GetPool(projectileData.Value.projectilePrefab.gameObject).ReturnToPool(projectileData.Value.projectilePrefab.gameObject);
+                Debug.Log("ReturnToPool");
             }
             else
             {
                 Destroy(this.gameObject);
+                Debug.Log("Destroy");
             }
-
-            isActive = false;
         }
     }
 }

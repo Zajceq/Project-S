@@ -1,5 +1,4 @@
 using UnityEngine;
-using System;
 using UnityAtoms.BaseAtoms;
 
 namespace UnityAtoms.MyAtoms
@@ -11,14 +10,12 @@ namespace UnityAtoms.MyAtoms
     [CreateAssetMenu(menuName = "Unity Atoms/Variables/ProjectileData", fileName = "ProjectileDataVariable")]
     public sealed class ProjectileDataVariable : AtomVariable<ProjectileData, ProjectileDataPair, ProjectileDataEvent, ProjectileDataPairEvent, ProjectileDataProjectileDataFunction>
     {
-        public float speed;
-        public float damage;
-        public Projectile projectilePrefab;
-        public LayerMask targetLayer;
-
         protected override bool ValueEquals(ProjectileData other)
         {
-            throw new NotImplementedException();
+            return this.Value.speed == other.speed &&
+                   this.Value.damage == other.damage &&
+                   this.Value.projectilePrefab == other.projectilePrefab &&
+                   this.Value.targetLayer == other.targetLayer;
         }
     }
 }

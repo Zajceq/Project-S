@@ -7,6 +7,12 @@ public class PoolingManager : Singleton<PoolingManager>
 
     public PrefabPool CreatePool(GameObject prefab, int initialSize)
     {
+        if (prefab == null)
+        {
+            Debug.LogError("Prefab is null");
+            return null;
+        }
+
         if (pools.ContainsKey(prefab.name))
         {
             Debug.LogWarning("Pool for prefab " + prefab.name + " already exists. Returning existing pool.");
@@ -27,6 +33,12 @@ public class PoolingManager : Singleton<PoolingManager>
 
     public PrefabPool GetPool(GameObject prefab)
     {
+        if (prefab == null)
+        {
+            Debug.LogError("Prefab is null");
+            return null;
+        }
+
         if (pools.ContainsKey(prefab.name))
         {
             return pools[prefab.name];

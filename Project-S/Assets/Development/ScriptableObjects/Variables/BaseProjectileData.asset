@@ -17,7 +17,8 @@ MonoBehaviour:
   _value:
     speed: 50
     damage: 1
-    projectilePrefab: {fileID: 0}
+    projectilePrefab: {fileID: 1259865673663102, guid: 8b227e0429c621940acb9e2e8d18d12f,
+      type: 3}
     targetLayer:
       serializedVersion: 2
       m_Bits: 64
@@ -28,22 +29,17 @@ MonoBehaviour:
   _oldValue:
     speed: 50
     damage: 1
-    projectilePrefab: {fileID: 0}
+    projectilePrefab: {fileID: 1259865673663102, guid: 8b227e0429c621940acb9e2e8d18d12f,
+      type: 3}
     targetLayer:
       serializedVersion: 2
       m_Bits: 64
   _initialValue:
     speed: 50
     damage: 1
-    projectilePrefab: {fileID: 6866264207388759160, guid: 8b227e0429c621940acb9e2e8d18d12f,
+    projectilePrefab: {fileID: 1259865673663102, guid: 8b227e0429c621940acb9e2e8d18d12f,
       type: 3}
     targetLayer:
       serializedVersion: 2
-      m_Bits: 64
+      m_Bits: 1088
   _preChangeTransformers: []
-  speed: 0
-  damage: 0
-  projectilePrefab: {fileID: 0}
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
