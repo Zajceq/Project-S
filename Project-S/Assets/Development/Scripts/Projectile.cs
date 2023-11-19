@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
 
             if (PoolingManager.Instance.GetPool(projectileData.Value.projectilePrefab.gameObject) != null)
             {
-                PoolingManager.Instance.GetPool(projectileData.Value.projectilePrefab.gameObject).ReturnToPool(projectileData.Value.projectilePrefab.gameObject);
+                PoolingManager.Instance.GetPool(projectileData.Value.projectilePrefab.gameObject).ReturnToPool(this.gameObject);
                 Debug.Log("ReturnToPool");
             }
             else
