@@ -1,12 +1,13 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class PrefabPool
+public class PoolPrefab
+
 {
     private Stack<GameObject> pool = new Stack<GameObject>();
     private GameObject prefab;
 
-    public PrefabPool(GameObject prefab)
+    public PoolPrefab(GameObject prefab)
     {
         if (prefab == null)
         {

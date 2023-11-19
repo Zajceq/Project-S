@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class PoolingManager : Singleton<PoolingManager>
 {
-    private Dictionary<string, PrefabPool> pools = new Dictionary<string, PrefabPool>();
+    private Dictionary<string, PoolPrefab> pools = new Dictionary<string, PoolPrefab>();
 
-    public PrefabPool CreatePool(GameObject prefab, int initialSize)
+    public PoolPrefab CreatePool(GameObject prefab, int initialSize)
     {
         if (prefab == null)
         {
@@ -19,7 +19,7 @@ public class PoolingManager : Singleton<PoolingManager>
             return pools[prefab.name];
         }
 
-        PrefabPool pool = new PrefabPool(prefab);
+        PoolPrefab pool = new PoolPrefab(prefab);
         for (int i = 0; i < initialSize; i++)
         {
             GameObject obj = Instantiate(prefab);
@@ -31,7 +31,7 @@ public class PoolingManager : Singleton<PoolingManager>
         return pool;
     }
 
-    public PrefabPool GetPool(GameObject prefab)
+    public PoolPrefab GetPool(GameObject prefab)
     {
         if (prefab == null)
         {

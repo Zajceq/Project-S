@@ -7,20 +7,34 @@ public class ProjectileSpawner : MonoBehaviour
     [SerializeField] private Projectile projectile;
     [SerializeField] private float shootingDelay;
 
-    [SerializeField] private bool canShoot;
-
-    private PrefabPool _pool;
+    private PoolPrefab _pool;
+    private Coroutine _shootingCoroutine;
 
     private void Start()
     {
         _pool = PoolingManager.Instance.CreatePool(projectile.projectileData.Value.projectilePrefab.gameObject, 50);
+    }
 
-        StartCoroutine(ShootingCoroutine());
+    public void StartShooting()
+    {
+        if (_shootingCoroutine == null)
+        {
+            _shootingCoroutine = StartCoroutine(ShootingCoroutine());
+        }
+    }
+
+    public void StopShooting()
+    {
+        if (_shootingCoroutine != null)
+        {
+            StopCoroutine(_shootingCoroutine);
+            _shootingCoroutine = null;
+        }
     }
 
     IEnumerator ShootingCoroutine()
     {
-        while (canShoot)
+        while (true)
         {
             var bullet = _pool.GetFromPool();
             bullet.gameObject.transform.position = transform.position;
@@ -30,6 +44,6 @@ public class ProjectileSpawner : MonoBehaviour
 
     private void OnDisable()
     {
-        StopAllCoroutines();
+        StopShooting();
     }
 }
