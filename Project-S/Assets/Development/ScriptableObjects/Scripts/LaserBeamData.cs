@@ -1,10 +1,10 @@
 using UnityEngine;
 
 [System.Serializable]
-public struct ProjectileData
+public struct LaserBeamData
 {
-    public float Speed;
+    public float BeamLength;
+    public float BeamWidth;
     public float Damage;
-    public GameObject ProjectilePrefab;
     public LayerMask TargetLayer;
 }

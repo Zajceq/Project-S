@@ -7,22 +7,22 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.up * projectileData.Value.speed * Time.deltaTime);
+        transform.Translate(Vector3.up * projectileData.Value.Speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if ((projectileData.Value.targetLayer.value & (1 << other.gameObject.layer)) != 0)
+        if ((projectileData.Value.TargetLayer.value & (1 << other.gameObject.layer)) != 0)
         {
             if (other.gameObject.TryGetComponent<Damageable>(out Damageable damageable))
             {
-                damageable.ReceiveDamage(projectileData.Value.damage);
+                damageable.ReceiveDamage(projectileData.Value.Damage);
                 Debug.Log("Damaged");
             }
 
-            if (PoolingManager.Instance.GetPool(projectileData.Value.projectilePrefab.gameObject) != null)
+            if (PoolingManager.Instance.GetPool(projectileData.Value.ProjectilePrefab.gameObject) != null)
             {
-                PoolingManager.Instance.GetPool(projectileData.Value.projectilePrefab.gameObject).ReturnToPool(this.gameObject);
+                PoolingManager.Instance.GetPool(projectileData.Value.ProjectilePrefab.gameObject).ReturnToPool(this.gameObject);
                 Debug.Log("ReturnToPool");
             }
             else

@@ -12,10 +12,10 @@ namespace UnityAtoms.MyAtoms
     {
         protected override bool ValueEquals(ProjectileData other)
         {
-            return this.Value.speed == other.speed &&
-                   this.Value.damage == other.damage &&
-                   this.Value.projectilePrefab == other.projectilePrefab &&
-                   this.Value.targetLayer == other.targetLayer;
+            return this.Value.Speed == other.Speed &&
+                   this.Value.Damage == other.Damage &&
+                   this.Value.ProjectilePrefab == other.ProjectilePrefab &&
+                   this.Value.TargetLayer == other.TargetLayer;
         }
     }
 }

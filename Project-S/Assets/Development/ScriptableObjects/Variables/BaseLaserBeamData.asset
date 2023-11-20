@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d6363f4ca858a64a91e6810d69cb263, type: 3}
-  m_Name: BaseProjectileData
+  m_Script: {fileID: 11500000, guid: d4dea3f91cb91ba498c25eb632c3bf94, type: 3}
+  m_Name: BaseLaserBeamData
   m_EditorClassIdentifier: 
   _developerDescription: 
   _id: 
   _value:
-    Speed: 50
+    BeamLength: 170
+    BeamWidth: 0.5
     Damage: 1
-    ProjectilePrefab: {fileID: 1259865673663102, guid: 8b227e0429c621940acb9e2e8d18d12f,
-      type: 3}
     TargetLayer:
       serializedVersion: 2
       m_Bits: 1088
@@ -27,18 +26,16 @@ MonoBehaviour:
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
   _oldValue:
-    Speed: 5
+    BeamLength: 170
+    BeamWidth: 0.5
     Damage: 1
-    ProjectilePrefab: {fileID: 1259865673663102, guid: 8b227e0429c621940acb9e2e8d18d12f,
-      type: 3}
     TargetLayer:
       serializedVersion: 2
       m_Bits: 1088
   _initialValue:
-    Speed: 50
+    BeamLength: 200
+    BeamWidth: 0.5
     Damage: 1
-    ProjectilePrefab: {fileID: 1259865673663102, guid: 8b227e0429c621940acb9e2e8d18d12f,
-      type: 3}
     TargetLayer:
       serializedVersion: 2
       m_Bits: 1088
