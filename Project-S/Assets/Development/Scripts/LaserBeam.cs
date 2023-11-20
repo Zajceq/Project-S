@@ -19,8 +19,6 @@ public class LaserBeam : MonoBehaviour
         _lineRenderer.startWidth = _laserBeamData.Value.BeamWidth;
         _lineRenderer.endWidth = _laserBeamData.Value.BeamWidth;
         _lineRenderer.enabled = false;
-
-        Activate();
     }
 
     public void Activate()
