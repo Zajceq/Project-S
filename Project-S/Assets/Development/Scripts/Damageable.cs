@@ -1,13 +1,14 @@
 using UnityEngine;
 using UnityAtoms.BaseAtoms;
+using UnityAtoms;
 
 public class Damageable : MonoBehaviour
 {
-    [SerializeField] private FloatConstant maxHealth;
-    [SerializeField] private FloatVariable currentHealth;
+    [SerializeField] private FloatReference maxHealth;
+    [SerializeField] private FloatReference currentHealth;
 
-    [SerializeField] private VoidEvent damagedEvent;
-    [SerializeField] private VoidEvent dieEvent;
+    [SerializeField] private VoidBaseEventReference damagedEvent;
+    [SerializeField] private VoidBaseEventReference dieEvent;
 
     private void Start()
     {
@@ -24,12 +25,12 @@ public class Damageable : MonoBehaviour
         }
         else
         {
-            damagedEvent.Raise();
+            damagedEvent.Event.Raise();
         }
     }
 
     private void Die()
     {
-        dieEvent.Raise();
+        dieEvent.Event.Raise();
     }
 }
