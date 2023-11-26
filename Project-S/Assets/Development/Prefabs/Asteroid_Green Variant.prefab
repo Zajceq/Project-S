@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2539957199284379094}
     m_Modifications:
+    - target: {fileID: 1014899055782066, guid: c7f152626bdc3b14f86ef2237eddff6c, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1822345149752838, guid: c7f152626bdc3b14f86ef2237eddff6c, type: 3}
       propertyPath: m_Name
       value: Asteroid Lava Green

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid Lava Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 1619919757320400, guid: f603e71ddc270d54192200e95673e2a6, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4579553980399578, guid: f603e71ddc270d54192200e95673e2a6, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -134,6 +138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Asteroid_Blue Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5575125141284851277, guid: 15d13fddb40d4af43aac20bd3a42c93e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
