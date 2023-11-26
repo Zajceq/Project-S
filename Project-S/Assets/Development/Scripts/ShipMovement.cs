@@ -50,7 +50,7 @@ public class ShipMovement : MonoBehaviour
 
     private void HandleScreenBoundaries()
     {
-        Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, transform.position.z));
+        Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, transform.position.z + 500)); //Adding 500 fixes bug with ship teleporting
 
         float objectWidth = _shipCollider.bounds.extents.x;
         float objectHeight = _shipCollider.bounds.extents.y;
