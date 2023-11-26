@@ -325,10 +325,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdb17fec1b303348a58360589c23656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: {fileID: 11400000, guid: 64934f7651f45e64087a8f2f54e93971, type: 2}
-  currentHealth: {fileID: 11400000, guid: 505e68ce8dfb82e4393f64fb58b52d4b, type: 2}
-  damagedEvent: {fileID: 11400000, guid: 5a4c0fb816c6b064eb963b1c5b6e93ac, type: 2}
-  dieEvent: {fileID: 11400000, guid: d45d0b14d28d6124b944d423414253e4, type: 2}
+  maxHealth:
+    _usage: 1
+    _value: 0
+    _constant: {fileID: 11400000, guid: 64934f7651f45e64087a8f2f54e93971, type: 2}
+    _variable: {fileID: 0}
+    _variableInstancer: {fileID: 0}
+  currentHealth:
+    _usage: 2
+    _value: 0
+    _constant: {fileID: 0}
+    _variable: {fileID: 11400000, guid: 505e68ce8dfb82e4393f64fb58b52d4b, type: 2}
+    _variableInstancer: {fileID: 0}
+  damagedEvent:
+    _usage: 0
+    _event: {fileID: 11400000, guid: 5a4c0fb816c6b064eb963b1c5b6e93ac, type: 2}
+    _eventInstancer: {fileID: 0}
+    _collection: {fileID: 0}
+    _list: {fileID: 0}
+    _collectionInstancer: {fileID: 0}
+    _listInstancer: {fileID: 0}
+  dieEvent:
+    _usage: 0
+    _event: {fileID: 11400000, guid: d45d0b14d28d6124b944d423414253e4, type: 2}
+    _eventInstancer: {fileID: 0}
+    _collection: {fileID: 0}
+    _list: {fileID: 0}
+    _collectionInstancer: {fileID: 0}
+    _listInstancer: {fileID: 0}
 --- !u!1 &7274328169683261001
 GameObject:
   m_ObjectHideFlags: 0
