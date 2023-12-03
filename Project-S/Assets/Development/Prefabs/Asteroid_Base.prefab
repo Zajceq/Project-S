@@ -41,7 +41,6 @@ GameObject:
   m_Component:
   - component: {fileID: 109640189632971639}
   - component: {fileID: 8946650256691232318}
-  - component: {fileID: 240914383127657374}
   - component: {fileID: 1189848053325905329}
   - component: {fileID: 312020396275446924}
   m_Layer: 6
@@ -66,7 +65,7 @@ Transform:
   - {fileID: 6822931509882639945}
   - {fileID: 6367716300138334899}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8946650256691232318
 MonoBehaviour:
@@ -108,20 +107,6 @@ MonoBehaviour:
     _list: {fileID: 0}
     _collectionInstancer: {fileID: 0}
     _listInstancer: {fileID: 0}
---- !u!114 &240914383127657374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5575125141284851277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 347cb615da422499abfc2dd8d5239e9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inMemoryCopy: {fileID: 0}
-  _base: {fileID: 11400000, guid: 5eed1a0647fc29446b54b990db70f6cc, type: 2}
 --- !u!114 &1189848053325905329
 MonoBehaviour:
   m_ObjectHideFlags: 0
