@@ -55,8 +55,7 @@ public class Spawner : MonoBehaviour
         float totalChance = 0;
         foreach (var obj in _spawnableObjects)
         {
-            var item = obj.GetComponent<ISpawnable>();
-            if (item != null)
+            if (obj.TryGetComponent<ISpawnable>(out var item))
             {
                 totalChance += item.SpawnChance;
             }
@@ -65,8 +64,7 @@ public class Spawner : MonoBehaviour
         float randomPoint = Random.Range(0, totalChance);
         foreach (var obj in _spawnableObjects)
         {
-            var item = obj.GetComponent<ISpawnable>();
-            if (item != null)
+            if (obj.TryGetComponent<ISpawnable>(out var item))
             {
                 if (randomPoint < item.SpawnChance)
                 {
