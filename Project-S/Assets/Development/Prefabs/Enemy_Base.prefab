@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7325083021105114102}
   - component: {fileID: 5660882327704575063}
   - component: {fileID: 1671670255279009387}
-  m_Layer: 0
+  - component: {fileID: 5566873743472410844}
+  - component: {fileID: 2734317495970744274}
+  m_Layer: 6
   m_Name: Enemy_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7325083021105114102
 MonoBehaviour:
@@ -102,3 +104,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inMemoryCopy: {fileID: 0}
   _base: {fileID: 11400000, guid: 632aa42009bac0f4f9a7f7b956f6b0ab, type: 2}
+--- !u!114 &5566873743472410844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687059750003041708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823340a83d767c74ba2baeb8c71b0e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnChance: 0.3
+--- !u!114 &2734317495970744274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4687059750003041708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251b82bcbb4970a47847145423a879a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+  _mask:
+    serializedVersion: 2
+    m_Bits: 1024

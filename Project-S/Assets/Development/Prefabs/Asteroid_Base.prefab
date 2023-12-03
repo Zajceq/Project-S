@@ -43,6 +43,8 @@ GameObject:
   - component: {fileID: 8946650256691232318}
   - component: {fileID: 1189848053325905329}
   - component: {fileID: 312020396275446924}
+  - component: {fileID: 8675866974021408707}
+  - component: {fileID: 4602884869201922187}
   m_Layer: 6
   m_Name: Asteroid_Base
   m_TagString: Untagged
@@ -135,6 +137,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inMemoryCopy: {fileID: 0}
   _base: {fileID: 11400000, guid: 632aa42009bac0f4f9a7f7b956f6b0ab, type: 2}
+--- !u!114 &8675866974021408707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575125141284851277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5361dc75c76baf64e9b147219d482b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnChance: 0.3
+--- !u!114 &4602884869201922187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5575125141284851277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251b82bcbb4970a47847145423a879a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 15
+  _mask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &6919110152133249950
 GameObject:
   m_ObjectHideFlags: 0

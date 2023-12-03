@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 3432816806077787636}
   - component: {fileID: 4591279072450850514}
   - component: {fileID: 237894056436579805}
+  - component: {fileID: 4244293780160965775}
+  - component: {fileID: 4146971738835451152}
   m_Layer: 6
   m_Name: Mine_Base
   m_TagString: Untagged
@@ -35,7 +37,7 @@ Transform:
   - {fileID: 4456112939554767871}
   - {fileID: 5224080853742647013}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2042784830803069573
 MonoBehaviour:
@@ -119,6 +121,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inMemoryCopy: {fileID: 0}
   _base: {fileID: 11400000, guid: 632aa42009bac0f4f9a7f7b956f6b0ab, type: 2}
+--- !u!114 &4244293780160965775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506356519761360746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcbd6293f87688545aa730eb373eabfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawnChance: 0.3
+--- !u!114 &4146971738835451152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5506356519761360746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 251b82bcbb4970a47847145423a879a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 10
+  _mask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &6466277414588043716
 GameObject:
   m_ObjectHideFlags: 0
