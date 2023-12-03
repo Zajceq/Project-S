@@ -12,11 +12,11 @@ public class MoveDownTheScreen : MonoBehaviour
         transform.Translate(Vector3.down * _speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         if (((1 << other.gameObject.layer) & _mask) != 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // TODO: Pooling
         }
     }
 }

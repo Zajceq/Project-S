@@ -46,7 +46,7 @@ public class Spawner : MonoBehaviour
         GameObject toSpawn = ChooseSpawnableObject();
         if (toSpawn != null)
         {
-            Instantiate(toSpawn, spawnPosition, Quaternion.identity);
+            Instantiate(toSpawn, spawnPosition, Quaternion.identity); // TODO: Pooling
         }
     }
 
