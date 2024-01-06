@@ -125,6 +125,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Insect Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5566873743472410844, guid: 351e4dcaa8eaee944ac915ecc45e05c2,
+        type: 3}
+      propertyPath: prefab
+      value: 
+      objectReference: {fileID: 2933262818110190291}
+    - target: {fileID: 5566873743472410844, guid: 351e4dcaa8eaee944ac915ecc45e05c2,
+        type: 3}
+      propertyPath: _prefab
+      value: 
+      objectReference: {fileID: 2933262818110190291}
     - target: {fileID: 8127120559563308982, guid: 351e4dcaa8eaee944ac915ecc45e05c2,
         type: 3}
       propertyPath: m_RootOrder

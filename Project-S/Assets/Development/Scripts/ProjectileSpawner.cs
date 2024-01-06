@@ -37,7 +37,7 @@ public class ProjectileSpawner : MonoBehaviour
         while (true)
         {
             var bullet = _pool.GetFromPool();
-            bullet.gameObject.transform.position = transform.position;
+            bullet.transform.position = transform.position;
             yield return new WaitForSeconds(shootingDelay);
         }
     }

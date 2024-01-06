@@ -16,7 +16,7 @@ public class MoveDownTheScreen : MonoBehaviour
     {
         if (((1 << other.gameObject.layer) & _mask) != 0)
         {
-            Destroy(gameObject); // TODO: Pooling
+            PoolingManager.Instance.GetPool(gameObject).ReturnToPool(this.gameObject);
         }
     }
 }

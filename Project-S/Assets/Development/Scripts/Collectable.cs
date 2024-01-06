@@ -16,6 +16,6 @@ public class Collectable : MonoBehaviour
 
     private void Collect()
     {
-        Destroy(gameObject);
+        PoolingManager.Instance.GetPool(gameObject).ReturnToPool(this.gameObject);
     }
 }

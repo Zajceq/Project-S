@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, ISpawnable
@@ -10,4 +11,9 @@ public class Enemy : MonoBehaviour, ISpawnable
     {
         get { return _spawnChance; }
     }
+
+    public void Die()
+    {
+        PoolingManager.Instance.GetPool(gameObject).ReturnToPool(this.gameObject);
+    }    
 }

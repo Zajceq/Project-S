@@ -10,5 +10,8 @@ public class Asteroid : MonoBehaviour, ISpawnable
     {
         get { return _spawnChance; }
     }
-
+    public void Die()
+    {
+        PoolingManager.Instance.GetPool(gameObject).ReturnToPool(this.gameObject);
+    }
 }

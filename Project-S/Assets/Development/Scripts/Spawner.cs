@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Color _gizmoColor = Color.red;
 
     private float _timeSinceLastSpawn;
+    public GameObject[] SpawnableObjects { get { return _spawnableObjects; } }
 
     private void Update()
     {
@@ -44,9 +45,26 @@ public class Spawner : MonoBehaviour
     private void SpawnObject(Vector3 spawnPosition)
     {
         GameObject toSpawn = ChooseSpawnableObject();
+
         if (toSpawn != null)
         {
-            Instantiate(toSpawn, spawnPosition, Quaternion.identity); // TODO: Pooling
+            var pool = PoolingManager.Instance.GetPool(toSpawn);
+
+            if (pool != null)
+            {
+                var objToSpawn = pool.GetFromPool();
+                objToSpawn.transform.position = spawnPosition;
+                objToSpawn.transform.rotation = Quaternion.identity;
+                objToSpawn.SetActive(true);
+            }
+            else
+            {
+                var newPool = PoolingManager.Instance.CreatePool(toSpawn, 5);
+                var objToSpawn = newPool.GetFromPool();
+                objToSpawn.transform.position = spawnPosition;
+                objToSpawn.transform.rotation = Quaternion.identity;
+                objToSpawn.SetActive(true);
+            }
         }
     }
 

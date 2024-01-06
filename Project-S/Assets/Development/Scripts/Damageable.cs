@@ -10,7 +10,7 @@ public class Damageable : MonoBehaviour
     [SerializeField] private VoidBaseEventReference damagedEvent;
     [SerializeField] private VoidBaseEventReference dieEvent;
 
-    private void Start()
+    private void OnEnable()
     {
         currentHealth.Value = maxHealth.Value;
     }

@@ -7,16 +7,18 @@ public class PoolingManager : Singleton<PoolingManager>
 
     public PoolPrefab CreatePool(GameObject prefab, int initialSize)
     {
+        string prefabName = prefab.name.Replace("(Clone)", "");
+
         if (prefab == null)
         {
             Debug.LogError("Prefab is null");
             return null;
         }
 
-        if (pools.ContainsKey(prefab.name))
+        if (pools.ContainsKey(prefabName))
         {
-            Debug.LogWarning("Pool for prefab " + prefab.name + " already exists. Returning existing pool.");
-            return pools[prefab.name];
+            Debug.LogWarning("Pool for prefab " + prefabName + " already exists. Returning existing pool.");
+            return pools[prefabName];
         }
 
         PoolPrefab pool = new PoolPrefab(prefab);
@@ -27,21 +29,23 @@ public class PoolingManager : Singleton<PoolingManager>
             pool.AddToPool(obj);
         }
 
-        pools.Add(prefab.name, pool);
+        pools.Add(prefabName, pool);
         return pool;
     }
 
     public PoolPrefab GetPool(GameObject prefab)
     {
+        string prefabName = prefab.name.Replace("(Clone)", "");
+
         if (prefab == null)
         {
             Debug.LogError("Prefab is null");
             return null;
         }
 
-        if (pools.ContainsKey(prefab.name))
+        if (pools.ContainsKey(prefabName))
         {
-            return pools[prefab.name];
+            return pools[prefabName];
         }
 
         return null;

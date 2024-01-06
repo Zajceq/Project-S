@@ -17,18 +17,15 @@ public class Projectile : MonoBehaviour
             if (other.gameObject.TryGetComponent<Damageable>(out Damageable damageable))
             {
                 damageable.ReceiveDamage(projectileData.Value.Damage);
-                Debug.Log("Damaged");
             }
 
             if (PoolingManager.Instance.GetPool(projectileData.Value.ProjectilePrefab.gameObject) != null)
             {
                 PoolingManager.Instance.GetPool(projectileData.Value.ProjectilePrefab.gameObject).ReturnToPool(this.gameObject);
-                Debug.Log("ReturnToPool");
             }
             else
             {
                 Destroy(this.gameObject);
-                Debug.Log("Destroy");
             }
         }
     }
