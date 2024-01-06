@@ -12,7 +12,7 @@ public class ProjectileSpawner : MonoBehaviour
 
     private void Start()
     {
-        _pool = PoolingManager.Instance.CreatePool(projectile.projectileData.Value.ProjectilePrefab.gameObject, 50);
+        _pool = PoolingManager.Instance.CreatePool(projectile.projectileData.Value.ProjectilePrefab.gameObject, 5);
     }
 
     public void StartShooting()
