@@ -32,8 +32,9 @@ Transform:
   - {fileID: 5905838955759821147}
   - {fileID: 6880476297893691109}
   - {fileID: 7945301707054305318}
+  - {fileID: 1706803215711320770}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3769384751815377348
 GameObject:
@@ -46,7 +47,7 @@ GameObject:
   - component: {fileID: 6880476297893691109}
   - component: {fileID: 6750485852343616909}
   m_Layer: 0
-  m_Name: CoinManager
+  m_Name: CoinsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +129,55 @@ MonoBehaviour:
   _cpsData:
     BaseCpS: 1
     Multiplier: 1
+--- !u!1 &8608534276927900360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706803215711320770}
+  - component: {fileID: 506846291971698087}
+  m_Layer: 0
+  m_Name: InventoryManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1706803215711320770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608534276927900360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 44364089679724803}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &506846291971698087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608534276927900360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71801558af385941b73334467b8e373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinsManager: {fileID: 0}
+  equipmentCanvas: {fileID: 0}
+  availableItems: []
+  equipementUpgradePrefab: {fileID: 0}
+  upgradesParent: {fileID: 0}
 --- !u!1001 &7948408571077404514
 PrefabInstance:
   m_ObjectHideFlags: 0

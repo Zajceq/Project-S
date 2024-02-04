@@ -1,33 +1,32 @@
 using UnityEngine;
-using static Cinemachine.DocumentationSortingAttribute;
 
 [CreateAssetMenu(fileName = "NewItem", menuName = "Inventory/Item", order = 1)]
 public class ItemSO : ScriptableObject
 {
     public Sprite ItemSprite;
     public string ItemName;
-    public string Description;
-    public float CpsIncrease;
-    public int Level;
-    public float BaseUpgradeCost;
+    public double CpsIncrease;
+    public int ItemLevel;
+    public double BaseUpgradeCost;
+    public bool IsUnlocked = false;
 
-    private float? upgradeCostCache = null;
-    private float? currentCPSCache = null;
+    private double? upgradeCostCache = null;
+    private double? currentCPSCache = null;
 
-    public float GetUpgradeCost()
+    public double GetUpgradeCost()
     {
         if (!upgradeCostCache.HasValue)
         {
-            upgradeCostCache = BaseUpgradeCost * Mathf.Pow(1.07f, Level); //random value, WIP
+            upgradeCostCache = BaseUpgradeCost * Mathf.Pow(1.07f, ItemLevel); //random value, WIP
         }
         return upgradeCostCache.Value;
     }
 
-    public float GetCurrentCPS()
+    public double GetCurrentCPS()
     {
         if (!currentCPSCache.HasValue)
         {
-            currentCPSCache = CpsIncrease * Level;
+            currentCPSCache = CpsIncrease * ItemLevel;
         }
         return currentCPSCache.Value;
     }
@@ -40,7 +39,7 @@ public class ItemSO : ScriptableObject
 
     public void UpgradeItem()
     {
-        Level++;
+        ItemLevel++;
         ResetCache();
     }
 }

@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114216866430666256}
   - component: {fileID: 45202572353313102}
   m_Layer: 0
-  m_Name: Background_Controller
+  m_Name: BackgroundController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
