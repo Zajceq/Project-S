@@ -2,12 +2,11 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class CoinsManager : MonoBehaviour
+public class CoinsManager : Singleton<CoinsManager>
 {
-    [SerializeField] private double _currentCoins;
-    [SerializeField] private CpSManager _cpsManager;
+    [SerializeField] private double currentCoins;
 
-    public double CurrentCoins {  get { return _currentCoins; } }
+    public double CurrentCoins {  get { return currentCoins; } }
 
     private void OnEnable()
     {
@@ -18,23 +17,23 @@ public class CoinsManager : MonoBehaviour
     {
         while (true)
         {
-            _currentCoins += _cpsManager.CpsData.TotalCpS * Time.deltaTime;
+            currentCoins += CpSManager.Instance.CpsData.TotalCpS * Time.deltaTime;
             yield return null;
         }
     }
 
     public void AddCoins(double amount)
     {
-        _currentCoins += amount;
+        currentCoins += amount;
     }
 
     public void SubtractCoins(double amount)
     {
-        _currentCoins = Math.Max(0, _currentCoins - amount);
+        currentCoins = Math.Max(0, currentCoins - amount);
     }
 
     public void MultiplyCoins(double multiplier)
     {
-        _currentCoins *= multiplier;
+        currentCoins *= multiplier;
     }
 }

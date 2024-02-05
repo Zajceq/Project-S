@@ -3,34 +3,40 @@ using System.Collections.Generic;
 
 public class InventoryManager : Singleton<InventoryManager>
 {
-    [SerializeField] private CoinsManager coinsManager;
     [SerializeField] private Canvas inventoryCanvas;
     [SerializeField] private List<ItemSO> availableItems;
 
     [SerializeField] private GameObject inventoryUpgradePrefab;
     [SerializeField] private Transform upgradesParent;
 
-
-    public void BuyItem(ItemSO item)
+#if UNITY_EDITOR
+    private void Awake()
     {
-        var cost = item.GetUpgradeCost();
-        if (coinsManager.CurrentCoins >= cost)
-        {
-            coinsManager.SubtractCoins(cost);
-            item.UpgradeItem();
-            UpdateUI();
-        }
-        else
-        {
-            Debug.Log("Unable to Buy");
-        }
+        ResetUpgrades();
     }
 
-    public void UnlockItem(ItemSO item)
+    private void ResetUpgrades()
     {
-        item.IsUnlocked = true;
-        availableItems.Add(item);
+        foreach (ItemSO item in availableItems)
+        {
+            item.ItemLevel = 0;
+        }
         UpdateUI();
+    }
+#endif
+
+    private void Start()
+    {
+        UpdateUI();
+    }
+
+
+    public void AddItemToList(ItemSO item)
+    {
+        if (!availableItems.Contains(item))
+        {
+            availableItems.Add(item);
+        }
     }
 
     public void UpdateUI()
@@ -43,11 +49,11 @@ public class InventoryManager : Singleton<InventoryManager>
         foreach (ItemSO item in availableItems)
         {
             var itemUI = Instantiate(inventoryUpgradePrefab, upgradesParent);
-            var equipmentUpgrade = itemUI.GetComponent<InventoryUpgrade>();
-            if (equipmentUpgrade != null)
+            var inventoryUpgrade = itemUI.GetComponent<InventoryUpgrade>();
+            if (inventoryUpgrade != null)
             {
-                equipmentUpgrade.ItemSO = item;
-                equipmentUpgrade.UpdateData();
+                inventoryUpgrade.ItemSO = item;
+                inventoryUpgrade.UpdateData();
             }
         }
     }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UpgradeManager : MonoBehaviour
+public class UpgradeManager : Singleton<UpgradeManager>
 {
     [SerializeField] private CoinsManager coinsManager;
 

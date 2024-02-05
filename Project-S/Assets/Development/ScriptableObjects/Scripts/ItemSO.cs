@@ -19,6 +19,7 @@ public class ItemSO : ScriptableObject
         {
             upgradeCostCache = BaseUpgradeCost * Mathf.Pow(1.07f, ItemLevel); //random value, WIP
         }
+        Debug.Log("upgradeCostCache: " + upgradeCostCache.Value);
         return upgradeCostCache.Value;
     }
 
@@ -28,6 +29,7 @@ public class ItemSO : ScriptableObject
         {
             currentCPSCache = CpsIncrease * ItemLevel;
         }
+        Debug.Log("currentCPSCache: " + currentCPSCache.Value);
         return currentCPSCache.Value;
     }
 
